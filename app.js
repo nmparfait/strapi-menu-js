@@ -52,6 +52,16 @@ linkBtns.forEach((btn) => {
       submenu.classList.add('show');
       submenu.style.left = `${center}px`;
       submenu.style.top = `${bottom}px`;
+
+      //optional
+      let columns = 'col-2';
+      if (links.length === 3) {
+        columns = 'col-3';
+      }
+      if (links.length > 3) {
+        columns = 'col-4';
+      }
+
       submenu.innerHTML = `
       <section>
         <h4>${page}</h4>
@@ -68,4 +78,16 @@ linkBtns.forEach((btn) => {
       `;
     }
   });
+});
+
+//hide the submenu
+
+hero.addEventListener('mouseover', function (e) {
+  submenu.classList.remove('show');
+});
+
+nav.addEventListener('mouseover', function (e) {
+  if (!e.target.classList.contains('link-btn')) {
+    submenu.classList.remove('show');
+  }
 });
