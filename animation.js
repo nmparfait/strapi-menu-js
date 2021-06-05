@@ -43,6 +43,6 @@ const startAnimation = function () {
   window.requestAnimationFrame(startAnimation);
 };
 
-startAnimation();
+//startAnimation();
 
 //
